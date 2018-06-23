@@ -5,8 +5,8 @@ body {
     font-family: arial, sans-serif;
 }
 
-#main, #chats {
-    width: 500px;
+#main {
+    width: 1080px;
     margin: auto;
     text-align: left;
     background: white;
@@ -105,4 +105,30 @@ form input[type=text] {
   padding: 10px;
   font-weight: normal;
   font-size: 15px;
+}
+
+#submit {
+  padding:20px;
+}
+
+#chats {
+  width: 500px;
+  margin-top: 50px;
+  float;
+}
+
+.inputtxt {
+    width: 400px;
+    height: 25px;
+    font-size:20px;
+}
+
+#usernames {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.username {
+  font-size: 20px;
+  font-weight: normal;
 }

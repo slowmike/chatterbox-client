@@ -18,12 +18,7 @@ class App {
   }
 
   init() {
-    $('#main').append(`
-    <form id="send">
-      <input id="message" type="text">
-      <input type="submit" class="submit" value="Submit">
-    </form>`);
-    $('#main').on('submit', '#send .submit', () => this.handleSubmit());
+    $('#main').on('click', '.submit', () => this.handleSubmit());
     this.fetch();
     this.fetchMessages();
     setInterval(() => { this.fetchMessages(); }, 5000);
@@ -110,7 +105,7 @@ class App {
     var timeStamp = this.parseTimeStamp(message.updatedAt);
     var key = JSON.stringify(msgUsername);
     if (!this.usernames[key] && msgUsername !== undefined && msgUsername !== null && msgUsername !== '') {
-      $('#main').append(`<div class="username">${msgUsername}</div>`);
+      $('#usernames').append(`<div class="username">${msgUsername}</div>`);
       this.usernames[key] = msgUsername;
     }
     $('#chats').append(`<div class="message">${msgUsername} - ${message.roomname}<div class="timestamp">${timeStamp}<div><div class="text"> ${message.text}</div></div>`);
@@ -118,9 +113,12 @@ class App {
   }
 
   parseTimeStamp(timestamp) {
-    var dateS = timestamp.slice(0, 10);
-    var timeS = timestamp.slice(11, 19);
-    return `${dateS} ${timeS}`;
+    var date = timestamp.slice(0, 10);
+    var hour = timestamp.slice(11, 13);
+    var minSec = timestamp.slice(13, 19);
+    var pstHour = (parseInt(hour, 10)+17)%24;
+    var time = pstHour+minSec;
+    return `${date} (${time} Pacific Time)`;
   }
 
   renderRoom(room) {
@@ -138,7 +136,7 @@ class App {
   handleSubmit() {
     var message = {
       username: this.username,
-      text: $('#message').val(),
+      text: $('.inputtxt').val(),
       roomname: this.roomname
     };
     this.send(message);
