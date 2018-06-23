@@ -116,8 +116,8 @@ class App {
     var date = timestamp.slice(0, 10);
     var hour = timestamp.slice(11, 13);
     var minSec = timestamp.slice(13, 19);
-    var pstHour = (parseInt(hour, 10)+17)%24;
-    var time = pstHour+minSec;
+    var pstHour = (parseInt(hour, 10) + 17) % 24;
+    var time = pstHour + minSec;
     return `${date} (${time} Pacific Time)`;
   }
 
