@@ -9,7 +9,8 @@ body {
     width: 1080px;
     margin: auto;
     text-align: left;
-    background: white;
+    background: #000;
+    color: #ff8;
     padding: 50px 60px;
     border: solid #ddd;
     border-width: 0 1px 1px 1px;
@@ -83,38 +84,36 @@ form input[type=text] {
     padding: 10px;
 }
 
-.friend {
-    color: #fff;
-    background-color: #0090da;
-}
-
 .message {
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #ddd;
-  font-weight: bold;
-  font-size: 20px;
+    width: 500px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #333;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .timestamp {
-  font-weight: normal;
-  font-size: 10px;
+    font-weight: normal;
+    font-size: 10px;
 }
 
 .text {
-  padding: 10px;
-  font-weight: normal;
-  font-size: 15px;
+    padding: 10px;
+    font-weight: normal;
+    font-size: 15px;
 }
 
 #submit {
-  padding:20px;
+    padding:20px;
 }
 
 #chats {
-  width: 500px;
-  margin-top: 50px;
-  float;
+    width: 500px;
+    margin-right: 50px;
+    margin-top: 50px;
+    column-span: none;
+    float: left;
 }
 
 .inputtxt {
@@ -123,12 +122,41 @@ form input[type=text] {
     font-size:20px;
 }
 
+#social {
+    height: 1200px;
+}
+
+#people {
+    height: 1200px;
+    float: right;
+}
+
 #usernames {
-  font-size: 30px;
-  font-weight: bold;
+    width: 500px;
+    height: 50%;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .username {
-  font-size: 20px;
-  font-weight: normal;
+    padding:5px;
+    font-size: 20px;
+    font-weight: normal;
+    margin-top: 10px;
+    background-color: #aaa;
+}
+
+#friends {
+    width: 500px;
+    height: 50%;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.friend {
+    padding: 5px;
+    background-color: #bbb;
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: normal;
 }
